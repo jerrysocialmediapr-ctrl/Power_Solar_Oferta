@@ -506,14 +506,16 @@ footer p{color:rgba(255,255,255,0.4);font-size:13px;max-width:400px;margin:0 aut
     <div class="f-card reveal" style="transition-delay:0.1s">
       <div id="formWrap">
         <form onsubmit="handleForm(event)" id="mainForm">
+          <input type="hidden" name="access_key" value="TU_CODIGO_SECRETO_AQUI">
+          <input type="hidden" name="subject" value="Nuevo Lead - Power Solar Landing">
           <div class="f-row">
-            <div class="f-group"><label class="f-label">Nombre</label><input type="text" class="f-input" placeholder="Tu nombre" required></div>
-            <div class="f-group"><label class="f-label">Teléfono</label><input type="tel" class="f-input" placeholder="787-000-0000" required></div>
+            <div class="f-group"><label class="f-label">Nombre</label><input type="text" name="nombre" class="f-input" placeholder="Tu nombre" required></div>
+            <div class="f-group"><label class="f-label">Teléfono</label><input type="tel" name="telefono" class="f-input" placeholder="787-000-0000" required></div>
           </div>
-          <div class="f-group"><label class="f-label">Municipio / Ciudad</label><input type="text" class="f-input" placeholder="Ej: Ponce, Bayamón, Caguas..." required></div>
+          <div class="f-group"><label class="f-label">Municipio / Ciudad</label><input type="text" name="municipio" class="f-input" placeholder="Ej: Ponce, Bayamón, Caguas..." required></div>
           <div class="f-group">
             <label class="f-label">¿Qué necesitas?</label>
-            <select class="f-input" required>
+            <select name="necesidad" class="f-input" required>
               <option value="" disabled selected>Selecciona una opción...</option>
               <option>Tengo placas solares y quiero cotización para agregar más</option>
               <option>No tengo placas — quiero que me coticen gratis</option>
@@ -626,15 +628,35 @@ const formObs=new IntersectionObserver(entries=>{
 },{threshold:0.2});
 const fc=document.querySelector('.f-card');if(fc)formObs.observe(fc);
 
-// Form submit
-function handleForm(e){
+// Form submit to Web3Forms
+async function handleForm(e){
   e.preventDefault();
-  const btn=e.target.querySelector('.f-submit');
-  btn.innerHTML='<span class="btn-shine"></span>Enviando...';btn.disabled=true;
-  setTimeout(()=>{
-    document.getElementById('formWrap').style.display='none';
-    document.getElementById('fSuccess').classList.add('show');
-  },1300);
+  const form = e.target;
+  const btn = form.querySelector('.f-submit');
+  btn.innerHTML = '<span class="btn-shine"></span>Enviando...';
+  btn.disabled = true;
+
+  const formData = new FormData(form);
+  
+  try {
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    });
+    
+    if (response.ok) {
+      document.getElementById('formWrap').style.display = 'none';
+      document.getElementById('fSuccess').classList.add('show');
+    } else {
+      alert('Hubo un error al enviar. Por favor intenta de nuevo o comunícate por teléfono.');
+      btn.innerHTML = '<span class="btn-shine"></span>Solicitar cotización gratuita →';
+      btn.disabled = false;
+    }
+  } catch (err) {
+    alert('Error de conexión. Revisa tu internet y vuelve a intentar.');
+    btn.innerHTML = '<span class="btn-shine"></span>Solicitar cotización gratuita →';
+    btn.disabled = false;
+  }
 }
 </script>
 </body>
