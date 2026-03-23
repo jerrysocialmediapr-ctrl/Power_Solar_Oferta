@@ -524,7 +524,6 @@ footer p{color:rgba(255,255,255,0.4);font-size:13px;max-width:400px;margin:0 aut
     
     <!-- Real Image -->
     <div class="hero-image-wrap">
-      <!-- High quality real solar panel stock image -->
       <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80" alt="Panel Solar 595W Real" class="hero-real-image">
     </div>
   </div>
@@ -568,6 +567,8 @@ footer p{color:rgba(255,255,255,0.4);font-size:13px;max-width:400px;margin:0 aut
         <form onsubmit="handleForm(event)" id="mainForm">
           <input type="hidden" name="access_key" value="65bc124b-bd9d-4826-82f9-b3a67b181018">
           <input type="hidden" name="subject" value="Nuevo Lead - Power Solar Landing">
+          <!-- CAMPO OCULTO: Origen del Lead -->
+          <input type="hidden" name="leadSource" value="Power Solar Ofertas">
           <div class="f-row">
             <div class="f-group"><label class="f-label">Nombre</label><input type="text" name="nombre" class="f-input" placeholder="Tu nombre" required></div>
             <div class="f-group"><label class="f-label">Teléfono</label><input type="tel" name="telefono" class="f-input" placeholder="787-000-0000" required></div>
@@ -688,42 +689,42 @@ const formObs=new IntersectionObserver(entries=>{
 },{threshold:0.2});
 const fc=document.querySelector('.f-card');if(fc)formObs.observe(fc);
 
-// Configuración de Google Sheets (Reemplazar con tu URL cuando la tengas)
-const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbwc0kmpjBfmierUxYzIWkfpzvY9ydeGkdbz9QSgYnyMiDVu7dwNnxG_Pl7F7BcicRDa/exec";
+// URL correcta del Google Sheets Web App
+const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbwc0kmpjBfmierUxYzlWkfpzvY9ydeGkdbz9QSgYnyMiDVu7dwNnxG_Pl7F7BcicRDa/exec";
 
-// Form submit to Web3Forms and Google Sheets
+// Form submit
 async function handleForm(e){
   e.preventDefault();
   const form = e.target;
   const btn = form.querySelector('.f-submit');
   const formData = new FormData(form);
-  const data = Object.fromEntries(formData.entries()); // For Google Sheets JSON payload
-
-  // Add lead source for Google Sheets
-  data.leadSource = "Power Solar Landing Page"; // Or "Ofertas Empleados/Expansión" as in snippet
 
   btn.innerHTML = '<span class="btn-shine"></span>Enviando...';
   btn.disabled = true;
 
   try {
-    // 1. Send to Web3Forms (Email Notification)
+    // 1. Enviar a Web3Forms (notificación email)
     const web3Response = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       body: formData
     });
 
-    // 2. Send to Google Sheets (Admin Database)
-    if (GOOGLE_SHEETS_URL) {
-      fetch(GOOGLE_SHEETS_URL, {
-        method: 'POST',
-        mode: 'no-cors', // Required for cross-origin requests to Google Apps Script
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data)
-      }).catch(err => console.error("Error sending to Google Sheets:", err));
-    }
-    
+    // 2. Enviar a Google Sheets (sin headers para compatibilidad no-cors)
+    const params = new URLSearchParams({
+      Nombre: form.nombre.value,
+      Telefono: form.telefono.value,
+      Email: form.email ? form.email.value : '',
+      Municipio: form.municipio.value,
+      Servicio: form.necesidad.value,
+      leadSource: 'Power Solar Ofertas'
+    });
+
+    fetch(GOOGLE_SHEETS_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: params.toString()
+    }).catch(err => console.error("Error Google Sheets:", err));
+
     if (web3Response.ok) {
       document.getElementById('formWrap').style.display = 'none';
       document.getElementById('fSuccess').classList.add('show');
