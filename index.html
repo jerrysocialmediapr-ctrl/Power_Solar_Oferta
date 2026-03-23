@@ -570,16 +570,19 @@ footer p{color:rgba(255,255,255,0.4);font-size:13px;max-width:400px;margin:0 aut
           <!-- CAMPO OCULTO: Origen del Lead -->
           <input type="hidden" name="leadSource" value="Power Solar Ofertas">
           <div class="f-row">
-            <div class="f-group"><label class="f-label">Nombre</label><input type="text" name="nombre" class="f-input" placeholder="Tu nombre" required></div>
+            <div class="f-group"><label class="f-label">Nombre completo</label><input type="text" name="nombre" class="f-input" placeholder="Tu nombre" required></div>
             <div class="f-group"><label class="f-label">Teléfono</label><input type="tel" name="telefono" class="f-input" placeholder="787-000-0000" required></div>
           </div>
-          <div class="f-group"><label class="f-label">Municipio / Ciudad</label><input type="text" name="municipio" class="f-input" placeholder="Ej: Ponce, Bayamón, Caguas..." required></div>
+          <div class="f-row">
+            <div class="f-group"><label class="f-label">Email</label><input type="email" name="email" class="f-input" placeholder="tu@email.com" required></div>
+            <div class="f-group"><label class="f-label">Pueblo</label><input type="text" name="municipio" class="f-input" placeholder="Ej: Ponce, Bayamón..." required></div>
+          </div>
           <div class="f-group">
             <label class="f-label">¿Qué necesitas?</label>
             <select name="necesidad" class="f-input" required>
               <option value="" disabled selected>Selecciona una opción...</option>
-              <option>Tengo placas solares y quiero cotización para agregar más</option>
-              <option>No tengo placas — quiero que me coticen gratis</option>
+              <option value="Tengo placas solares pero quiero cotización para agregar mas">Tengo placas solares pero quiero cotización para agregar mas</option>
+              <option value="No tengo placas - quiero que me coticen gratis">No tengo placas - quiero que me coticen gratis</option>
             </select>
           </div>
           <button type="submit" class="f-submit"><span class="btn-shine"></span>Solicitar cotización gratuita →</button>
@@ -713,7 +716,7 @@ async function handleForm(e){
     const params = new URLSearchParams({
       Nombre: form.nombre.value,
       Telefono: form.telefono.value,
-      Email: '',
+      Email: form.email.value,
       Municipio: form.municipio.value,
       Servicio: form.necesidad.value,
       leadSource: 'Power Solar Ofertas'
