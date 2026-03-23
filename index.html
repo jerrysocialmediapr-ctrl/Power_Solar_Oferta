@@ -3,129 +3,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ofertas Power Solar PR | Paneles 595W | $0 Pronto</title>
-
-<meta name="description" content="Expande tu sistema solar o instala desde $0 pronto con paneles de 595W en Puerto Rico.">
-<link rel="canonical" href="https://ofertas.powersolarprr.com">
-
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://ofertas.powersolarprr.com">
-<meta property="og:title" content="Power Solar PR | Ofertas">
-<meta property="og:description" content="Cotiza gratis tu sistema solar">
-<meta property="og:image" content="https://ofertas.powersolarprr.com/logo.png">
-
-<style>
-body {
-  font-family: Arial, sans-serif;
-  margin:0;
-  background:#0b1a2b;
-  color:white;
-}
-
-.container {
-  max-width:600px;
-  margin:auto;
-  padding:20px;
-}
-
-h1 {
-  text-align:center;
-  color:#00d4ff;
-}
-
-input, select {
-  width:100%;
-  padding:12px;
-  margin:8px 0;
-  border-radius:8px;
-  border:none;
-}
-
-button {
-  width:100%;
-  padding:15px;
-  background:#00d4ff;
-  color:black;
-  border:none;
-  border-radius:10px;
-  font-size:18px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-.success {
-  display:none;
-  text-align:center;
-  margin-top:20px;
-}
-</style>
+<title>Ofertas Power Solar PR</title>
 </head>
 
 <body>
 
-<div class="container">
-  <h1>Solicita tu Cotización</h1>
+<div id="formWrap">
+<form id="mainForm" onsubmit="handleForm(event)">
 
-  <form id="leadForm">
-    <input type="text" name="nombre" placeholder="Nombre completo" required>
-    <input type="tel" name="telefono" placeholder="Teléfono" required>
-    <input type="email" name="email" placeholder="Email">
+<input type="hidden" name="access_key" value="TU_WEB3FORMS_KEY">
+<input type="hidden" name="leadSource" value="Power Solar Ofertas">
 
-    <select name="municipio" required>
-      <option value="">Selecciona tu pueblo</option>
-      <option>San Juan</option>
-      <option>Bayamón</option>
-      <option>Carolina</option>
-      <option>Ponce</option>
-    </select>
+<input type="text" name="nombre" placeholder="Nombre completo" required>
+<input type="tel" name="telefono" placeholder="Teléfono" required>
+<input type="email" name="email" placeholder="Email">
 
-    <select name="necesidad" required>
-      <option value="">¿Qué necesitas?</option>
-      <option>Instalar sistema nuevo</option>
-      <option>Expandir sistema actual</option>
-      <option>Baterías</option>
-    </select>
+<select name="municipio" required>
+<option value="">Selecciona tu pueblo</option>
+<option>San Juan</option>
+<option>Bayamón</option>
+<option>Carolina</option>
+<option>Ponce</option>
+</select>
 
-    <button type="submit">Solicitar cotización</button>
-  </form>
+<select name="necesidad" required>
+<option value="">¿Qué necesitas?</option>
+<option>Instalar sistema nuevo</option>
+<option>Expandir sistema actual</option>
+<option>Baterías</option>
+</select>
 
-  <div class="success" id="successMsg">
-    <h2>¡Recibimos tu información!</h2>
-    <p>Te estaremos contactando pronto.</p>
-  </div>
+<button class="f-submit" type="submit">
+<span class="btn-shine"></span>
+Solicitar cotización gratuita →
+</button>
+
+</form>
+</div>
+
+<div id="fSuccess" style="display:none;">
+<h2>¡Recibimos tu información!</h2>
+<p>Te estaremos contactando pronto.</p>
 </div>
 
 <script>
 const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbwc0kmpjBfmierUxYzIWkfpzvY9ydeGkdbz9QSgYnyMiDVu7dwNnxG_Pl7F7BcicRDa/exec";
 
-document.getElementById("leadForm").addEventListener("submit", async function(e){
+// FORM SUBMIT
+async function handleForm(e){
   e.preventDefault();
 
-  const form = e.target;
-  const data = new URLSearchParams({
-    Nombre: form.nombre.value,
-    Telefono: form.telefono.value,
-    Email: form.email.value,
-    Municipio: form.municipio.value,
-    Servicio: form.necesidad.value,
-    leadSource: "Power Solar Ofertas"
-  });
+  const form = document.getElementById('mainForm');
+  const btn = form.querySelector('.f-submit');
+  const formData = new FormData(form);
 
-  try {
-    await fetch(`${GOOGLE_SHEETS_URL}?${data.toString()}`, {
-      method: "GET",
-      mode: "no-cors"
+  btn.innerHTML = '<span class="btn-shine"></span>Enviando...';
+  btn.disabled = true;
+
+  try{
+
+    // 1) ENVÍO A WEB3FORMS
+    const web3Response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
     });
 
-    form.style.display = "none";
-    document.getElementById("successMsg").style.display = "block";
+    // 2) ENVÍO A GOOGLE SHEETS (MISMA TABLA)
+    const params = new URLSearchParams({
+      Nombre: form.nombre?.value || '',
+      Telefono: form.telefono?.value || '',
+      Email: form.email?.value || '',
+      Municipio: form.municipio?.value || '',
+      Servicio: form.necesidad?.value || '',
+      leadSource: 'Power Solar Ofertas'
+    });
 
-  } catch (err) {
-    alert("Error enviando formulario");
+    await fetch(`${GOOGLE_SHEETS_URL}?${params.toString()}`, {
+      method: 'GET',
+      mode: 'no-cors'
+    });
+
+    // SUCCESS
+    if(web3Response.ok){
+      document.getElementById('formWrap').style.display = 'none';
+      document.getElementById('fSuccess').style.display = 'block';
+    } else {
+      throw new Error("Web3Forms falló");
+    }
+
+  } catch(err){
     console.error(err);
+    alert('Error enviando formulario');
+    btn.innerHTML = '<span class="btn-shine"></span>Solicitar cotización gratuita →';
+    btn.disabled = false;
   }
-});
+}
 </script>
 
 </body>
