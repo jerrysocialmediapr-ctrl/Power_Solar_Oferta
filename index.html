@@ -8,21 +8,18 @@
 <meta name="keywords" content="Power Solar Ofertas, Power Solar PR, Power Solar Puerto Rico, paneles solares puerto rico, placas solares puerto rico, energía solar pr, ahorro luz puerto rico, luma puerto rico solution">
 <link rel="canonical" href="https://ofertas.powersolarprr.com">
 
-<!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ofertas.powersolarprr.com">
 <meta property="og:title" content="Power Solar PR | Paneles y Placas Solares en Puerto Rico">
 <meta property="og:description" content="Cotiza gratis tus paneles solares en Puerto Rico. Instalación de 595W con $0 pronto.">
 <meta property="og:image" content="https://ofertas.powersolarprr.com/logo.png">
 
-<!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://ofertas.powersolarprr.com">
 <meta property="twitter:title" content="Power Solar PR | Paneles y Placas Solares en Puerto Rico">
 <meta property="twitter:description" content="Cotiza gratis tus paneles solares en Puerto Rico. Instalación de 595W con $0 pronto.">
 <meta property="twitter:image" content="https://ofertas.powersolarprr.com/logo.png">
 
-<!-- Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -46,14 +43,7 @@
   },
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday"
-    ],
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
     "opens": "08:00",
     "closes": "18:00"
   },
@@ -74,221 +64,77 @@
 }
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--dark);overflow-x:hidden;}
 html{scroll-behavior:smooth;}
-
-.container {
-  max-width: 1300px;
-  margin: 0 auto;
-  width: 100%;
-}
+.container{max-width:1300px;margin:0 auto;width:100%;}
 
 /* NAV */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:300;
-  padding:18px 5%;display:flex;align-items:center;justify-content:space-between;
-  transition:all 0.4s;
-}
-nav .container{
-  display:flex;align-items:center;justify-content:space-between;
-}
-nav.scrolled{
-  background:rgba(4, 13, 43, 0.98);backdrop-filter:blur(20px);
-  border-bottom:1px solid rgba(255, 255, 255, 0.05);padding:12px 5%;
-}
+nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:18px 5%;display:flex;align-items:center;justify-content:space-between;transition:all 0.4s;}
+nav .container{display:flex;align-items:center;justify-content:space-between;}
+nav.scrolled{background:rgba(4,13,43,0.98);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.05);padding:12px 5%;}
 .logo{font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.3rem;letter-spacing:2px;color:white;transition:color 0.4s;}
 .logo span{color:var(--sol);}
 nav.scrolled .logo{color:var(--bl);}
-.nav-cta{
-  background:var(--or);color:white;font-family:'Montserrat',sans-serif;
-  font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;
-  border:none;padding:11px 24px;border-radius:50px;cursor:pointer;transition:all 0.2s;
-}
+.nav-cta{background:var(--or);color:white;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;border:none;padding:11px 24px;border-radius:50px;cursor:pointer;transition:all 0.2s;}
 .nav-cta:hover{background:#C44008;transform:translateY(-1px);}
 
 /* HERO */
-.hero{
-  min-height:100vh;position:relative;overflow:hidden;
-  background:var(--bl);display:flex;align-items:center;
-  padding:140px 5% 80px;
-}
-
-/* Morphing plasma background */
+.hero{min-height:100vh;position:relative;overflow:hidden;background:var(--bl);display:flex;align-items:center;padding:140px 5% 80px;}
 #plasmaCanvas{position:absolute;inset:0;width:100%;height:100%;opacity:0.35;pointer-events:none;}
-
-/* Animated geometric lines */
 .geo-lines{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
 .geo-line{position:absolute;background:rgba(255,255,255,0.04);transform-origin:center;}
-
-/* Orange arc */
-.hero-arc{
-  position:absolute;right:-180px;bottom:-180px;
-  width:600px;height:600px;background:var(--or);border-radius:50%;opacity:0.15;
-  animation:arcPulse 6s ease-in-out infinite;pointer-events:none;
-}
+.hero-arc{position:absolute;right:-180px;bottom:-180px;width:600px;height:600px;background:var(--or);border-radius:50%;opacity:0.15;animation:arcPulse 6s ease-in-out infinite;pointer-events:none;}
 @keyframes arcPulse{0%,100%{transform:scale(1);}50%{transform:scale(1.08);}}
-
-/* Hero Layout */
-.hero-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 60px;
-  z-index: 2;
-  position: relative;
-}
-
-/* Hero content */
-.hero-content{flex: 1;max-width:650px;}
-
-/* Text reveal animation */
+.hero-container{display:flex;align-items:center;justify-content:space-between;gap:60px;z-index:2;position:relative;}
+.hero-content{flex:1;max-width:650px;}
 .word-reveal{overflow:hidden;display:inline-block;}
-.word-inner{
-  display:inline-block;transform:translateY(100%);
-  animation:wordUp 0.7s cubic-bezier(0.16,1,0.3,1) forwards;
-}
+.word-inner{display:inline-block;transform:translateY(100%);animation:wordUp 0.7s cubic-bezier(0.16,1,0.3,1) forwards;}
 @keyframes wordUp{to{transform:translateY(0);}}
-
-.hero-eyebrow{
-  display:inline-flex;align-items:center;gap:10px;
-  background:rgba(245,166,35,0.12);border:1px solid rgba(245,166,35,0.3);
-  color:var(--sol);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;
-  padding:7px 18px;border-radius:4px;margin-bottom:28px;
-  opacity:0;animation:fadeIn 0.5s 0.1s ease forwards;
-}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;background:rgba(245,166,35,0.12);border:1px solid rgba(245,166,35,0.3);color:var(--sol);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:7px 18px;border-radius:4px;margin-bottom:28px;opacity:0;animation:fadeIn 0.5s 0.1s ease forwards;}
 @keyframes fadeIn{to{opacity:1;}}
-
-.hero h1{
-  font-family:'Montserrat',sans-serif;font-weight:900;
-  font-size:clamp(2.4rem,6vw,4.5rem);line-height:1.1;color:white;margin-bottom:22px;
-}
-.hero h1 .accent{background:var(--or);padding:2px 10px;border-radius:4px;display:inline-block;margin: 5px 0;}
+.hero h1{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(2.4rem,6vw,4.5rem);line-height:1.1;color:white;margin-bottom:22px;}
+.hero h1 .accent{background:var(--or);padding:2px 10px;border-radius:4px;display:inline-block;margin:5px 0;}
 .hero h1 .line2{display:block;-webkit-text-stroke:2px rgba(255,255,255,0.4);color:transparent;margin-top:5px;}
-
-.hero-desc{
-  color:rgba(255,255,255,0.7);font-size:clamp(1rem, 2vw, 1.15rem);line-height:1.7;
-  max-width:500px;margin-bottom:36px;
-  opacity:0;animation:fadeIn 0.8s 0.8s ease forwards;
-}
+.hero-desc{color:rgba(255,255,255,0.7);font-size:clamp(1rem,2vw,1.15rem);line-height:1.7;max-width:500px;margin-bottom:36px;opacity:0;animation:fadeIn 0.8s 0.8s ease forwards;}
 .hero-desc strong{color:white;}
-
-/* Price strip with counter */
-.price-strip{
-  display:inline-flex;align-items:stretch;border-radius:12px;overflow:hidden;
-  margin-bottom:36px;border:1px solid rgba(255,255,255,0.1);
-  opacity:0;animation:fadeIn 0.8s 1s ease forwards;
-}
+.price-strip{display:inline-flex;align-items:stretch;border-radius:12px;overflow:hidden;margin-bottom:36px;border:1px solid rgba(255,255,255,0.1);opacity:0;animation:fadeIn 0.8s 1s ease forwards;}
 .ps-left{background:var(--or);padding:14px 22px;text-align:center;}
 .ps-num{font-family:'Montserrat',sans-serif;font-weight:900;font-size:2.4rem;color:white;line-height:1;}
 .ps-label{font-size:9px;color:rgba(255,255,255,0.8);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-top:4px;}
 .ps-right{background:rgba(255,255,255,0.07);padding:14px 20px;display:flex;flex-direction:column;justify-content:center;gap:4px;}
 .ps-right p{font-size:12px;color:rgba(255,255,255,0.65);line-height:1.4;}
-.ps-right strong{color:white;display:block;font-size: 14px;}
-
-.hero-btns{
-  display:flex;gap:12px;flex-wrap:wrap;
-  opacity:0;animation:fadeIn 0.8s 1.1s ease forwards;
-}
-.btn-main{
-  background:var(--or);color:white;border:none;
-  font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;
-  padding:16px 32px;border-radius:8px;cursor:pointer;transition:all 0.25s;
-  position:relative;overflow:hidden;
-}
-.btn-main::after{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(circle at center,rgba(255,255,255,0.3),transparent 70%);
-  opacity:0;transition:opacity 0.3s;
-}
+.ps-right strong{color:white;display:block;font-size:14px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;opacity:0;animation:fadeIn 0.8s 1.1s ease forwards;}
+.btn-main{background:var(--or);color:white;border:none;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;padding:16px 32px;border-radius:8px;cursor:pointer;transition:all 0.25s;position:relative;overflow:hidden;}
+.btn-main::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at center,rgba(255,255,255,0.3),transparent 70%);opacity:0;transition:opacity 0.3s;}
 .btn-main:hover{background:#C44008;transform:translateY(-3px);box-shadow:0 15px 40px rgba(232,86,14,0.5);}
 .btn-main:hover::after{opacity:1;}
-
-/* Energy pulse on CTA */
-.pulse-ring{
-  position:absolute;inset:-4px;border-radius:10px;
-  border:2px solid var(--or);opacity:0;
-  animation:pulseRing 2.5s 2s ease-in-out infinite;pointer-events:none;
-}
+.pulse-ring{position:absolute;inset:-4px;border-radius:10px;border:2px solid var(--or);opacity:0;animation:pulseRing 2.5s 2s ease-in-out infinite;pointer-events:none;}
 @keyframes pulseRing{0%{inset:-4px;opacity:0.8;}100%{inset:-16px;opacity:0;}}
-
-.btn-ghost{
-  background:rgba(255,255,255,0.08);color:white;
-  border:1px solid rgba(255,255,255,0.2);
-  font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;
-  padding:16px 24px;border-radius:8px;cursor:pointer;transition:all 0.25s;
-}
+.btn-ghost{background:rgba(255,255,255,0.08);color:white;border:1px solid rgba(255,255,255,0.2);font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;padding:16px 24px;border-radius:8px;cursor:pointer;transition:all 0.25s;}
 .btn-ghost:hover{background:rgba(255,255,255,0.16);}
-
-/* Real Image */
-.hero-image-wrap {
-  flex: 1;
-  max-width: 600px;
-  display: flex;
-  justify-content: flex-end;
-  animation: panelEntrance 1s 0.3s ease both;
-}
+.hero-image-wrap{flex:1;max-width:600px;display:flex;justify-content:flex-end;animation:panelEntrance 1s 0.3s ease both;}
 @keyframes panelEntrance{from{opacity:0;transform:translateX(50px);}to{opacity:1;transform:translateX(0);}}
+.hero-real-image{width:100%;max-width:550px;height:auto;border-radius:20px;box-shadow:0 40px 100px rgba(0,0,0,0.5),0 0 60px rgba(4,51,196,0.3);object-fit:cover;border:1px solid rgba(255,255,255,0.15);transition:transform 0.4s ease;}
+.hero-real-image:hover{transform:scale(1.02) translateY(-10px);}
 
-.hero-real-image {
-  width: 100%;
-  max-width: 550px;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 40px 100px rgba(0,0,0,0.5), 0 0 60px rgba(4,51,196,0.3);
-  object-fit: cover;
-  border: 1px solid rgba(255,255,255,0.15);
-  transition: transform 0.4s ease;
-}
-.hero-real-image:hover {
-  transform: scale(1.02) translateY(-10px);
-}
-
-/* STATS WITH COUNTERS */
-.stats-bar{
-  background:white;padding:36px 5%;
-  border-bottom:3px solid var(--or);
-  box-shadow:0 4px 30px rgba(4,51,196,0.07);
-}
-.stats-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.stat{
-  text-align:center;flex:1;padding:0 20px;
-  border-right:1px solid var(--border);
-}
+/* STATS */
+.stats-bar{background:white;padding:36px 5%;border-bottom:3px solid var(--or);box-shadow:0 4px 30px rgba(4,51,196,0.07);}
+.stats-container{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;}
+.stat{text-align:center;flex:1;padding:0 20px;border-right:1px solid var(--border);}
 .stat:last-child{border-right:none;}
-.stat-num{
-  font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(1.8rem, 3vw, 2.2rem);
-  color:var(--bl);line-height:1;
-}
+.stat-num{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(1.8rem,3vw,2.2rem);color:var(--bl);line-height:1;}
 .stat-num .suffix{color:var(--or);}
 .stat-label{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-top:6px;}
 
-/* PAIN POINTS */
+/* PAIN */
 .pain-section{padding:100px 5%;background:white;}
 .section-head{text-align:center;margin-bottom:60px;}
 .eyebrow{color:var(--or);font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;display:block;}
 .section-head h2{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(1.8rem,4vw,2.8rem);}
 .section-head h2 span{color:var(--bl);}
-
 .pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;max-width:1100px;margin:0 auto;}
-.pain-card{
-  border:2px solid var(--border);border-radius:20px;padding:36px 28px;
-  position:relative;overflow:hidden;cursor:default;
-  transition:all 0.4s cubic-bezier(0.16,1,0.3,1);
-}
-.pain-card::before{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(4,51,196,0.05),transparent);
-  opacity:0;transition:opacity 0.4s;
-}
-.pain-card:hover{
-  border-color:var(--bl);
-  transform:translateY(-8px) scale(1.02);
-  box-shadow:0 30px 60px rgba(4,51,196,0.15);
-}
+.pain-card{border:2px solid var(--border);border-radius:20px;padding:36px 28px;position:relative;overflow:hidden;cursor:default;transition:all 0.4s cubic-bezier(0.16,1,0.3,1);}
+.pain-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(4,51,196,0.05),transparent);opacity:0;transition:opacity 0.4s;}
+.pain-card:hover{border-color:var(--bl);transform:translateY(-8px) scale(1.02);box-shadow:0 30px 60px rgba(4,51,196,0.15);}
 .pain-card:hover::before{opacity:1;}
 .pain-num{font-family:'Montserrat',sans-serif;font-size:4rem;font-weight:900;color:var(--border);line-height:1;margin-bottom:16px;transition:color 0.3s;}
 .pain-card:hover .pain-num{color:#D0D8F5;}
@@ -304,82 +150,34 @@ nav.scrolled .logo{color:var(--bl);}
 .marquee-strip{background:var(--or);padding:14px 0;overflow:hidden;white-space:nowrap;width:100%;}
 .marquee-track{display:inline-flex;animation:marqueeRun 25s linear infinite;min-width:100%;}
 .marquee-track:hover{animation-play-state:paused;}
-.marquee-item{
-  display:inline-flex;align-items:center;gap:14px;padding:0 32px;
-  font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;
-  color:white;letter-spacing:1.5px;text-transform:uppercase;
-}
+.marquee-item{display:inline-flex;align-items:center;gap:14px;padding:0 32px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;color:white;letter-spacing:1.5px;text-transform:uppercase;}
 .m-dot{width:5px;height:5px;background:rgba(255,255,255,0.5);border-radius:50%;}
 @keyframes marqueeRun{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
-/* FORM SECTION */
-.form-section{
-  padding:100px 5%;
-  background:linear-gradient(150deg,var(--bl) 0%,#051E8F 100%);
-  position:relative;overflow:hidden;
-}
-.form-section::before{
-  content:'';position:absolute;top:-200px;right:-200px;
-  width:600px;height:600px;background:var(--or);border-radius:50%;opacity:0.06;
-  animation:orbFloat 8s ease-in-out infinite;pointer-events:none;
-}
-.form-section::after{
-  content:'';position:absolute;bottom:-150px;left:-150px;
-  width:400px;height:400px;border:2px solid rgba(255,255,255,0.05);border-radius:50%;
-  animation:orbFloat 10s 2s ease-in-out infinite reverse;pointer-events:none;
-}
+/* FORM */
+.form-section{padding:100px 5%;background:linear-gradient(150deg,var(--bl) 0%,#051E8F 100%);position:relative;overflow:hidden;}
+.form-section::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:var(--or);border-radius:50%;opacity:0.06;animation:orbFloat 8s ease-in-out infinite;pointer-events:none;}
+.form-section::after{content:'';position:absolute;bottom:-150px;left:-150px;width:400px;height:400px;border:2px solid rgba(255,255,255,0.05);border-radius:50%;animation:orbFloat 10s 2s ease-in-out infinite reverse;pointer-events:none;}
 @keyframes orbFloat{0%,100%{transform:translate(0,0);}50%{transform:translate(20px,-30px);}}
-
 .form-inner{max-width:650px;margin:0 auto;position:relative;z-index:2;}
-.form-badge{
-  display:inline-flex;align-items:center;gap:8px;
-  background:rgba(245,166,35,0.15);border:1px solid rgba(245,166,35,0.35);
-  color:var(--sol);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
-  padding:7px 18px;border-radius:4px;margin-bottom:20px;
-}
-.form-inner h2{
-  font-family:'Montserrat',sans-serif;font-weight:900;
-  font-size:clamp(1.8rem,4vw,3rem);color:white;margin-bottom:10px;line-height:1.2;
-}
+.form-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,166,35,0.15);border:1px solid rgba(245,166,35,0.35);color:var(--sol);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:7px 18px;border-radius:4px;margin-bottom:20px;}
+.form-inner h2{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(1.8rem,4vw,3rem);color:white;margin-bottom:10px;line-height:1.2;}
 .form-inner h2 em{color:var(--sol);font-style:normal;}
 .form-sub{color:rgba(255,255,255,0.7);font-size:15px;margin-bottom:36px;line-height:1.6;}
-
-/* Form card with step reveal */
-.f-card{
-  background:white;border-radius:24px;padding:44px 40px;
-  box-shadow:0 40px 100px rgba(0,0,0,0.3);
-}
-
+.f-card{background:white;border-radius:24px;padding:44px 40px;box-shadow:0 40px 100px rgba(0,0,0,0.3);}
 .f-group{margin-bottom:22px;opacity:0;transform:translateX(-20px);transition:opacity 0.5s ease,transform 0.5s ease;}
 .f-group.field-visible{opacity:1;transform:none;}
 .f-label{display:block;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
-.f-input{
-  width:100%;border:2px solid var(--border);border-radius:10px;
-  padding:14px 18px;font-family:'Inter',sans-serif;font-size:15px;
-  color:var(--dark);outline:none;transition:all 0.3s;background:white;
-}
+.f-input{width:100%;border:2px solid var(--border);border-radius:10px;padding:14px 18px;font-family:'Inter',sans-serif;font-size:15px;color:var(--dark);outline:none;transition:all 0.3s;background:white;}
 .f-input:focus{border-color:var(--bl);box-shadow:0 0 0 4px rgba(4,51,196,0.08);}
 .f-input::placeholder{color:#ccc;}
 select.f-input{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;background-color:white;}
 .f-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-
-.f-submit{
-  width:100%;background:linear-gradient(135deg,var(--or),#C44008);color:white;border:none;
-  font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;letter-spacing:1px;text-transform:uppercase;
-  padding:18px;border-radius:12px;cursor:pointer;transition:all 0.3s;
-  position:relative;overflow:hidden;
-  box-shadow:0 8px 30px rgba(232,86,14,0.4);
-}
-.f-submit .btn-shine{
-  position:absolute;top:0;left:-100%;width:50%;height:100%;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);
-  transition:left 0.5s;
-}
+.f-submit{width:100%;background:linear-gradient(135deg,var(--or),#C44008);color:white;border:none;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:18px;border-radius:12px;cursor:pointer;transition:all 0.3s;position:relative;overflow:hidden;box-shadow:0 8px 30px rgba(232,86,14,0.4);}
+.f-submit .btn-shine{position:absolute;top:0;left:-100%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);transition:left 0.5s;}
 .f-submit:hover .btn-shine{left:150%;}
 .f-submit:hover{transform:translateY(-2px);box-shadow:0 16px 50px rgba(232,86,14,0.55);}
 .f-note{text-align:center;font-size:11.5px;color:#bbb;margin-top:14px;}
-
-/* Success */
 .f-success{display:none;text-align:center;padding:60px 20px;}
 .f-success.show{display:block;}
 .success-anim{font-size:64px;animation:successBounce 0.6s ease both;margin-bottom:16px;}
@@ -388,10 +186,64 @@ select.f-input{cursor:pointer;appearance:none;background-image:url("data:image/s
 .f-success p{color:var(--muted);font-size:15px;line-height:1.7;}
 
 /* FOOTER */
-footer{background:var(--dark);padding:44px 5%;text-align:center;}
-.foot-logo{font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.2rem;letter-spacing:3px;color:white;margin-bottom:12px;}
-.foot-logo span{color:var(--or);}
-footer p{color:rgba(255,255,255,0.4);font-size:13px;max-width:400px;margin:0 auto;}
+footer{background:var(--dark);padding:50px 5% 40px;text-align:center;}
+.foot-logo{margin-bottom:20px;}
+.foot-disclaimer{
+  color:rgba(255,255,255,0.55);font-size:12px;max-width:680px;margin:0 auto 24px;
+  line-height:1.8;border:1px solid rgba(255,255,255,0.1);
+  border-radius:10px;padding:20px 24px;background:rgba(255,255,255,0.04);
+}
+.foot-disclaimer strong{color:rgba(255,255,255,0.8);display:block;margin-bottom:8px;font-size:13px;}
+.foot-links{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:16px;}
+.foot-copy{color:rgba(255,255,255,0.3);font-size:12px;}
+.btn-privacy{
+  background:transparent;border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.6);
+  font-family:'Inter',sans-serif;font-size:12px;padding:7px 18px;border-radius:50px;
+  cursor:pointer;transition:all 0.2s;
+}
+.btn-privacy:hover{border-color:var(--or);color:var(--sol);background:rgba(245,166,35,0.08);}
+
+/* PRIVACY MODAL */
+.modal-overlay{
+  display:none;position:fixed;inset:0;z-index:1000;
+  background:rgba(4,13,43,0.85);backdrop-filter:blur(6px);
+  align-items:center;justify-content:center;padding:20px;
+}
+.modal-overlay.open{display:flex;}
+.modal-box{
+  background:white;border-radius:20px;max-width:720px;width:100%;
+  max-height:88vh;overflow-y:auto;box-shadow:0 40px 100px rgba(0,0,0,0.5);
+  animation:modalIn 0.35s cubic-bezier(0.16,1,0.3,1);
+}
+@keyframes modalIn{from{opacity:0;transform:translateY(30px) scale(0.97);}to{opacity:1;transform:none;}}
+.modal-head{
+  position:sticky;top:0;background:white;padding:28px 36px 20px;
+  border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;
+  border-radius:20px 20px 0 0;z-index:2;
+}
+.modal-head h3{font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.2rem;color:var(--dark);}
+.modal-close{
+  width:36px;height:36px;border-radius:50%;border:none;background:var(--border);
+  font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:background 0.2s;color:var(--muted);flex-shrink:0;
+}
+.modal-close:hover{background:#e0e0e0;}
+.modal-body{padding:28px 36px 36px;}
+.modal-section{margin-bottom:28px;}
+.modal-section:last-child{margin-bottom:0;}
+.modal-section h4{
+  font-family:'Montserrat',sans-serif;font-weight:800;font-size:11px;
+  letter-spacing:2px;text-transform:uppercase;color:var(--or);
+  margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid var(--border);
+}
+.modal-section p{font-size:13.5px;color:var(--muted);line-height:1.75;margin-bottom:6px;}
+.modal-section strong{color:var(--dark);}
+.modal-intro{
+  background:linear-gradient(135deg,rgba(4,51,196,0.05),rgba(232,86,14,0.04));
+  border-radius:10px;padding:16px 20px;margin-bottom:24px;
+  border-left:3px solid var(--bl);
+}
+.modal-intro p{font-size:13px;color:var(--muted);line-height:1.7;}
 
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(40px);transition:opacity 0.7s ease,transform 0.7s ease;}
@@ -399,81 +251,41 @@ footer p{color:rgba(255,255,255,0.4);font-size:13px;max-width:400px;margin:0 aut
 .reveal-left{opacity:0;transform:translateX(-50px);transition:opacity 0.7s ease,transform 0.7s ease;}
 .reveal-left.visible{opacity:1;transform:none;}
 .reveal-right{opacity:0;transform:translateX(50px);transition:opacity 0.7s ease,transform 0.7s ease;}
-402: .reveal-right.visible{opacity:1;transform:none;}
+.reveal-right.visible{opacity:1;transform:none;}
 .d1{transition-delay:0.1s;}.d2{transition-delay:0.2s;}.d3{transition-delay:0.3s;}
 
-/* RESPONSIVE DESIGN */
 @media(max-width:1024px){
-  .hero-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 40px;
-  }
-  .hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .hero h1 .word-reveal { display: inline-block; }
-  .hero h1 .line2 { display: block; margin-top: 10px; }
-  .price-strip { width: fit-content; }
-  .hero-btns { justify-content: center; }
-  .hero-image-wrap {
-    justify-content: center;
-    width: 100%;
-  }
-  .hero-real-image {
-    max-width: 80%;
-  }
-  
-  .stats-container {
-    flex-wrap: wrap;
-    gap: 0;
-  }
-  .stat {
-    flex: 1 1 50%;
-    margin-bottom: 20px;
-  }
-  .stat:nth-child(2) { border-right: none; }
-  .stat:last-child { margin-bottom: 0; }
-  .stat:nth-child(3) { margin-bottom: 0; }
+  .hero-container{flex-direction:column;text-align:center;gap:40px;}
+  .hero-content{display:flex;flex-direction:column;align-items:center;}
+  .price-strip{width:fit-content;}
+  .hero-btns{justify-content:center;}
+  .hero-image-wrap{justify-content:center;width:100%;}
+  .hero-real-image{max-width:80%;}
+  .stats-container{flex-wrap:wrap;gap:0;}
+  .stat{flex:1 1 50%;margin-bottom:20px;}
+  .stat:nth-child(2){border-right:none;}
+  .stat:last-child{margin-bottom:0;}
 }
-
 @media(max-width:768px){
-  .hero {
-    padding: 120px 5% 60px;
-  }
-  .hero-real-image {
-    max-width: 100%;
-    border-radius: 16px;
-  }
-  .price-strip{
-    flex-direction: column;
-  }
-  .ps-left { border-radius: 12px 12px 0 0; }
-  .ps-right { border-radius: 0 0 12px 12px; text-align: center; }
-  
+  .hero{padding:120px 5% 60px;}
+  .hero-real-image{max-width:100%;border-radius:16px;}
+  .price-strip{flex-direction:column;}
+  .ps-left{border-radius:12px 12px 0 0;}
+  .ps-right{border-radius:0 0 12px 12px;text-align:center;}
   .f-row{grid-template-columns:1fr;}
   .f-card{padding:32px 24px;}
   nav{padding:14px 5%;}
-  
-  .stat {
-    flex: 1 1 100%;
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-    padding: 16px 0;
-    margin-bottom: 0;
-  }
-  .stat:last-child { border-bottom: none; }
-  .stat:nth-child(3) { border-bottom: 1px solid var(--border); }
+  .stat{flex:1 1 100%;border-right:none;border-bottom:1px solid var(--border);padding:16px 0;margin-bottom:0;}
+  .stat:last-child{border-bottom:none;}
+  .modal-head{padding:20px 24px 16px;}
+  .modal-body{padding:20px 24px 28px;}
 }
-
 @media(max-width:480px){
   .hero h1{font-size:2.3rem;}
   .nav-cta{padding:9px 18px;font-size:11px;}
   .logo{font-size:1.1rem;}
-  .btn-main{width: 100%;}
-  .btn-ghost{width: 100%;}
+  .btn-main{width:100%;}
+  .btn-ghost{width:100%;}
 }
 </style>
 </head>
@@ -481,7 +293,7 @@ footer p{color:rgba(255,255,255,0.4);font-size:13px;max-width:400px;margin:0 aut
 
 <nav id="nav">
   <div class="container">
-    <a href="https://www.powersolarprr.com" class="logo"><img src="logo.png" alt="Power Solar PR" style="height: 48px; width: auto;"></a>
+    <a href="https://www.powersolarprr.com" class="logo"><img src="logo.png" alt="Power Solar PR" style="height:48px;width:auto;"></a>
     <button class="nav-cta" onclick="scroll2('form')">Cotiza Gratis</button>
   </div>
 </nav>
@@ -491,7 +303,6 @@ footer p{color:rgba(255,255,255,0.4);font-size:13px;max-width:400px;margin:0 aut
   <canvas id="plasmaCanvas"></canvas>
   <div class="geo-lines" id="geoLines"></div>
   <div class="hero-arc"></div>
-
   <div class="container hero-container">
     <div class="hero-content">
       <div class="hero-eyebrow">⚡ Alquiler 15 años · Paneles 595W</div>
@@ -500,9 +311,7 @@ footer p{color:rgba(255,255,255,0.4);font-size:13px;max-width:400px;margin:0 aut
         <span class="word-reveal"><span class="word-inner accent" style="animation-delay:0.35s">paneles</span></span>
         <span class="word-reveal"><span class="word-inner line2" style="animation-delay:0.5s">a tu hogar.</span></span>
       </h1>
-      <p class="hero-desc">
-        Ya tienes placas — ahora <strong>expande tu sistema</strong> con paneles de 595W y deja de depender de LUMA para siempre.
-      </p>
+      <p class="hero-desc">Ya tienes placas — ahora <strong>expande tu sistema</strong> con paneles de 595W y deja de depender de LUMA para siempre.</p>
       <div class="price-strip">
         <div class="ps-left">
           <div class="ps-num">$<span id="heroCounter">0</span></div>
@@ -521,8 +330,6 @@ footer p{color:rgba(255,255,255,0.4);font-size:13px;max-width:400px;margin:0 aut
         <button class="btn-ghost" onclick="scroll2('pain')">Conoce más</button>
       </div>
     </div>
-    
-    <!-- Real Image -->
     <div class="hero-image-wrap">
       <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80" alt="Panel Solar 595W Real" class="hero-real-image">
     </div>
@@ -567,7 +374,6 @@ footer p{color:rgba(255,255,255,0.4);font-size:13px;max-width:400px;margin:0 aut
         <form onsubmit="handleForm(event)" id="mainForm">
           <input type="hidden" name="access_key" value="65bc124b-bd9d-4826-82f9-b3a67b181018">
           <input type="hidden" name="subject" value="Nuevo Lead - Power Solar Landing">
-          <!-- CAMPO OCULTO: Origen del Lead -->
           <input type="hidden" name="leadSource" value="Power Solar Ofertas">
           <div class="f-row">
             <div class="f-group"><label class="f-label">Nombre completo</label><input type="text" name="nombre" class="f-input" placeholder="Tu nombre" required></div>
@@ -594,16 +400,95 @@ footer p{color:rgba(255,255,255,0.4);font-size:13px;max-width:400px;margin:0 aut
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <div class="foot-logo"><img src="logo.png" alt="Power Solar PR" style="height: 60px; width: auto; margin-bottom: 20px;"></div>
-  <p>&copy; 2026 Power Solar | Soluciones y Paneles Solares | Puerto Rico. All Rights Reserved.</p>
+  <div class="foot-logo">
+    <img src="logo.png" alt="Power Solar PR" style="height:60px;width:auto;margin-bottom:16px;">
+  </div>
+  <div class="foot-links">
+    <button class="btn-privacy" onclick="openPrivacy()">📋 Políticas de Privacidad</button>
+    <span style="color:rgba(255,255,255,0.15);font-size:11px;">·</span>
+    <span style="color:rgba(255,255,255,0.25);font-size:11px;cursor:default;" title="Página administrada por Jerry Encarnación, consultor independiente. No es línea de servicio técnico ni garantías.">Aviso legal</span>
+  </div>
+  <p class="foot-copy" style="font-size:10.5px;color:rgba(255,255,255,0.2);max-width:560px;margin:10px auto 0;line-height:1.6;">Página administrada por Jerry Encarnación, consultor independiente de Power Solar. No representa oficialmente a Power Solar LLC. Tel. solo para ventas — no es línea de servicio técnico ni garantías.</p>
 </footer>
+
+<!-- PRIVACY MODAL -->
+<div class="modal-overlay" id="privacyModal" onclick="closeOnOverlay(event)">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3>Política de Privacidad</h3>
+      <button class="modal-close" onclick="closePrivacy()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-intro">
+        <p>Resumen de la política de privacidad. Datos Personales tratados para las siguientes finalidades y utilizando los siguientes servicios:</p>
+      </div>
+
+      <div class="modal-section">
+        <h4>Contactar con el Usuario</h4>
+        <p><strong>Formulario de contacto</strong></p>
+        <p>Datos Personales: apellido(s); ciudad; código postal; dirección de correo electrónico; distintas clases de Datos; nombre; número de teléfono; país.</p>
+      </div>
+
+      <div class="modal-section">
+        <h4>Estadísticas</h4>
+        <p><strong>Google Analytics (Universal Analytics) y Meta Events Manager</strong></p>
+        <p>Datos Personales: Datos de uso; Rastreadores.</p>
+        <p><strong>Google Analytics 4</strong></p>
+        <p>Datos Personales: cantidad de Usuarios; ciudad; Datos de uso; estadísticas de sesión; información del dispositivo; información del navegador; latitud (de la ciudad); longitud (de la ciudad); Rastreadores.</p>
+      </div>
+
+      <div class="modal-section">
+        <h4>Gestión de Etiquetas</h4>
+        <p><strong>Google Tag Manager</strong></p>
+        <p>Datos Personales: Rastreadores.</p>
+      </div>
+
+      <div class="modal-section">
+        <h4>Gestión de la Recogida de Datos y de Encuestas Online</h4>
+        <p><strong>Anuncios para clientes potenciales de Meta</strong></p>
+        <p>Datos Personales: apellido(s); ciudad; código postal; Datos comunicados durante el uso del servicio; Datos de uso; dirección de correo electrónico; dirección física; estado; nombre; número de teléfono; Rastreadores; razón social.</p>
+      </div>
+
+      <div class="modal-section">
+        <h4>Interacción con Redes Sociales y Plataformas Externas</h4>
+        <p><strong>Botón Tweet y widgets sociales de Twitter</strong></p>
+        <p>Datos Personales: Datos de uso; Rastreadores.</p>
+      </div>
+
+      <div class="modal-section">
+        <h4>Publicidad</h4>
+        <p><strong>Google Ad Manager y Seguimiento de conversiones de Meta ads (píxel de Meta)</strong></p>
+        <p>Datos Personales: Datos de uso; Rastreadores.</p>
+      </div>
+
+      <div class="modal-section">
+        <h4>Remarketing y Behavioral Targeting</h4>
+        <p><strong>Remarketing de Google Ads</strong></p>
+        <p>Datos Personales: Datos de uso; Rastreadores.</p>
+      </div>
+
+      <div class="modal-section">
+        <h4>Visualizar Contenidos de Plataformas Externas</h4>
+        <p><strong>Google Fonts</strong></p>
+        <p>Datos Personales: Datos de uso; Rastreadores.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
 function scroll2(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
 
 // Nav scroll
 window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',scrollY>60);});
+
+// Privacy modal
+function openPrivacy(){document.getElementById('privacyModal').classList.add('open');document.body.style.overflow='hidden';}
+function closePrivacy(){document.getElementById('privacyModal').classList.remove('open');document.body.style.overflow='';}
+function closeOnOverlay(e){if(e.target===document.getElementById('privacyModal'))closePrivacy();}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closePrivacy();});
 
 // Plasma canvas
 const canvas=document.getElementById('plasmaCanvas');
@@ -658,7 +543,7 @@ const statsObs=new IntersectionObserver(entries=>{
     if(e.isIntersecting){
       const el=e.target,target=+el.dataset.target;
       let v=0;const duration=1200,steps=60;const inc=target/steps;
-      const t=setInterval(()=>{v=Math.min(v+inc,target);el.textContent=Math.round(v);if(v>=target)clearInterval(t);},duration/steps);
+      const ti=setInterval(()=>{v=Math.min(v+inc,target);el.textContent=Math.round(v);if(v>=target)clearInterval(ti);},duration/steps);
       statsObs.unobserve(el);
     }
   });
@@ -668,9 +553,9 @@ ctrs.forEach(c=>statsObs.observe(c));
 // Marquee
 const items=['595W por Panel','Alquiler 15 Años','Pagos desde $86/mes','Garantías Incluidas','Seguros Incluidos','$0 PRONTO','Instalamos en 1 día','Cotización Gratuita'];
 const mt=document.getElementById('mtrack');
-[...items,...items,...items].forEach(t=>{
+[...items,...items,...items].forEach(txt=>{
   const d=document.createElement('div');d.className='marquee-item';
-  d.innerHTML=`<span class="m-dot"></span>${t}`;mt.appendChild(d);
+  d.innerHTML=`<span class="m-dot"></span>${txt}`;mt.appendChild(d);
 });
 
 // Scroll reveal
@@ -692,60 +577,35 @@ const formObs=new IntersectionObserver(entries=>{
 },{threshold:0.2});
 const fc=document.querySelector('.f-card');if(fc)formObs.observe(fc);
 
-// URL correcta del Google Sheets Web App
-const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbyhGheevvRNf9zGfU_NKJYrzBsG4nWsGHhsFs_puk4S7avpSMAnKC2hu6sLPm1jeqie/exec";
+const GOOGLE_SHEETS_URL="https://script.google.com/macros/s/AKfycbyhGheevvRNf9zGfU_NKJYrzBsG4nWsGHhsFs_puk4S7avpSMAnKC2hu6sLPm1jeqie/exec";
 
-// Form submit
-async function handleForm(e) {
+async function handleForm(e){
   e.preventDefault();
-  const form = e.target;
-  const btn = form.querySelector('.f-submit');
-  const formData = new FormData(form);
-
-  btn.innerHTML = '<span class="btn-shine"></span>Enviando...';
-  btn.disabled = true;
-
-  try {
-    // 1. Enviar a Web3Forms (notificación email)
-    const web3Response = await fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      body: formData
-    });
-
-    if (web3Response.ok) {
-      // 2. Enviar a Google Sheets via GET (evita CORS en producción)
-      const params = new URLSearchParams({
-        nombre: form.nombre.value,
-        telefono: form.telefono.value,
-        email: form.email.value,
-        municipio: form.municipio.value,
-        necesidad: form.necesidad.value,
-        leadSource: "Power Solar Ofertas",
-        origen: "Power Solar Ofertas",
-        anotaciones: form.necesidad.value
-      });
-
-      fetch(`${GOOGLE_SHEETS_URL}?${params.toString()}`, {
-        method: 'GET',
-        mode: 'no-cors'
-      }).catch(err => console.error("Error Google Sheets:", err));
-
-      // 3. Mostrar pantalla de éxito
-      document.getElementById('formWrap').style.display = 'none';
+  const form=e.target;
+  const btn=form.querySelector('.f-submit');
+  const formData=new FormData(form);
+  btn.innerHTML='<span class="btn-shine"></span>Enviando...';
+  btn.disabled=true;
+  try{
+    const web3Response=await fetch('https://api.web3forms.com/submit',{method:'POST',body:formData});
+    if(web3Response.ok){
+      const params=new URLSearchParams({nombre:form.nombre.value,telefono:form.telefono.value,email:form.email.value,municipio:form.municipio.value,necesidad:form.necesidad.value,leadSource:"Power Solar Ofertas",origen:"Power Solar Ofertas",anotaciones:form.necesidad.value});
+      fetch(`${GOOGLE_SHEETS_URL}?${params.toString()}`,{method:'GET',mode:'no-cors'}).catch(err=>console.error("Error Google Sheets:",err));
+      document.getElementById('formWrap').style.display='none';
       document.getElementById('fSuccess').classList.add('show');
-    } else {
+    }else{
       alert('Hubo un error al enviar. Por favor intenta de nuevo.');
-      btn.innerHTML = '<span class="btn-shine"></span>Solicitar cotización gratuita →';
-      btn.disabled = false;
+      btn.innerHTML='<span class="btn-shine"></span>Solicitar cotización gratuita →';
+      btn.disabled=false;
     }
-  } catch (err) {
+  }catch(err){
     alert('Error de conexión. Revisa tu internet y vuelve a intentar.');
-    btn.innerHTML = '<span class="btn-shine"></span>Solicitar cotización gratuita →';
-    btn.disabled = false;
+    btn.innerHTML='<span class="btn-shine"></span>Solicitar cotización gratuita →';
+    btn.disabled=false;
   }
 }
 </script>
-    <!-- Zoho SalesIQ -->
-    <script>window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}</script><script id="zsiqscript" src="https://salesiq.zohopublic.com/widget?wc=siq8b5d45e50d162227e7bf158a35a9329a2359befeb209734102e2b5e269eb5b57" defer></script>
+<script>window.$zoho=window.$zoho||{};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}</script>
+<script id="zsiqscript" src="https://salesiq.zohopublic.com/widget?wc=siq8b5d45e50d162227e7bf158a35a9329a2359befeb209734102e2b5e269eb5b57" defer></script>
 </body>
 </html>
